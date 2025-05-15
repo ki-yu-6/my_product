@@ -6,8 +6,15 @@
   <h2>検索結果</h2>
     <ul>
       {% for place in results %}
-        <li><storong>{{place.name}}</storong>  ({{place.dist}}km<br>
-        {{place.address}})
+        <li>
+          <p>{{place.spot_name}}</p>
+
+          {% if place.gallery_images %}
+            <img src="{{place.gallery_images}}" alt="{{place.spot_name}}の写真" >
+          {% endif %}
+
+          <p>{{place.introduction}}</p>
+          <p>({{place.dist}}km, {{place.address}})</p>
         </li>
       {% endfor %}
     </ul>
