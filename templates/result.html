@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<main>
+
+{% if results %}
+  <h2>検索結果</h2>
+    <ul>
+      {% for place in results %}
+        <li><storong>{{place.name}}</storong>  ({{place.dist}}km<br>
+        {{place.address}})
+        </li>
+      {% endfor %}
+    </ul>
+{% endif %}
+
+</main>
+{% endblock %}

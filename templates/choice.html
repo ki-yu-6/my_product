@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+<main>
+  <form method="POST" action="{{ url_for('choice') }}">
+    <h2>一緒に行く相手を選択してください</h2>
+    <button type="submit" name="family">家族(子連れなど)</button>
+    <button type="submit" name="partner">恋人</button>
+    <button type="submit" name="others_part">友達、一人など</button>
+  </form>
+</main>
+{% endblock %}

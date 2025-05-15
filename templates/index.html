@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+<main>
+  <h1>ドライブスポット検索ツール</h1>
+  <p class="resize_image">
+    <img src="../static/images/top_image.jpg" alt="トップ画" class="top_image">
+  </p>
+
+  <form method="GET" action="{{ url_for('choice') }}">
+    <button type="submit">検索開始</button>
+  </form>
+</main>
+{% endblock %}

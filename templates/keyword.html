@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+<main>
+  <form method="POST" action="{{ url_for('keyword') }}">
+    <div class="dadio_buttton">
+      <h2>見たい景色，場所を選択，または入力してください。</h2>
+      <button type="submit" name="keyword" value="桜" required>桜</button>
+      <button type="submit" name="keyword" value="海">海</button>
+      <button type="submit" name="keyword" value="川">川</button>
+      <button type="submit" name="keyword" value="山">山</button>
+      <button type="submit" name="keyword" value="夜景">夜景</button>
+    </div>
+    その他<br>
+    <input type="text" name="others_key"><button type="submit">検索</button>
+    <button type="submit" name="none">指定なし</button>
+  </form>
+</main>
+{% endblock %}
