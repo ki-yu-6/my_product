@@ -1,4 +1,3 @@
-import pandas as pd
 import requests
 from math import radians, sin, cos, sqrt, asin
 
