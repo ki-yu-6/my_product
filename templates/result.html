@@ -10,7 +10,7 @@
           <p>{{place.spot_name}}</p>
 
           {% if place.gallery_images %}
-            <img src="{{place.gallery_images}}" alt="{{place.spot_name}}の写真" >
+            <img src="{{place.gallery_images[0]}}" alt="{{place.spot_name}}の写真" >
           {% endif %}
 
           <p>{{place.introduction}}</p>
