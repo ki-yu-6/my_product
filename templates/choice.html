@@ -1,11 +1,24 @@
 {% extends "layout.html" %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="../static/css/choice.css">
+{% endblock %}
+
 {% block content %}
 <main>
   <form method="POST" action="{{ url_for('choice') }}">
     <h2>一緒に行く相手を選択してください</h2>
-    <button type="submit" name="family">家族(子連れなど)</button>
-    <button type="submit" name="partner">恋人</button>
-    <button type="submit" name="others_part">友達、一人など</button>
+    <div class="list">
+      <div class="family">
+        <button type="submit" name="family"><img src="https://static.amanaimages.com/imgroom/rf_preview640/11038/11038016032.jpg" alt="家族との写真"><br>家族(子連れなど)</button>
+      </div>
+      <div class="partner">
+        <button type="submit" name="partner"><img src="https://img01.jalannews.jp/img/2018/08/20180802_drive_01-670x437.jpg" alt="恋人との写真"><br>恋人</button>
+      </div>
+      <div class="others_part">
+        <button type="submit" name="others_part"><img src="https://media-assets.aumo.jp/uploads/feature/cover/871/medium_274a9641-7f07-4729-bf89-b154d795c8c3.jpg" alt="友達との写真"><br>友達、一人など</button>
+      </div>
+    </div>
   </form>
 </main>
 {% endblock %}

@@ -5,32 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>スポット検索</title>
+    <title>関西ドライブ</title>
     <link rel="stylesheet" href="../static/css/style.css">
-    <!-- <link rel="icon" href=""> -->
+    <link rel="icon" href="https://t.pimg.jp/081/559/211/1/81559211.jpg">
+    {% block extra_styles %}{% endblock %}
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <a href="/">ドライブスポット検索ツール</a>
-        </div>
+    <div class="wrapper">
+        <header>
+            <div class="logo">
+                <a href="/">HOME</a>
+            </div>
+        </header>
 
-        <!-- <nav class="menu">
-            <ul>
-                <li><a href="#">NEWS</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">SERVICES</a></li>
-                <li><a href="#">CONTACT</a></li>
-            </ul>
-        </nav> -->
-    </header>
+        {% block content %}
+        {% endblock %}
 
-    {% block content %}
-    {% endblock %}
-
-    <footer>
-        <div class="footer_logo">©︎ </div>
-    </footer>
+        <footer>
+            <div class="footer_logo">©︎ Copy Light</div>
+        </footer>
+    </div>
 </body>
 </html>

@@ -1,19 +1,34 @@
 {% extends "layout.html" %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="../static/css/keyword.css">
+{% endblock %}
+
 {% block content %}
 <main>
   <form method="POST" action="{{ url_for('keyword') }}">
-    <div class="dadio_buttton">
-      <h2>見たい景色，場所を選択，または入力してください。</h2>
-      <button type="submit" name="keyword" value="桜" required>桜</button>
-      <button type="submit" name="keyword" value="海">海</button>
-      <button type="submit" name="keyword" value="川">川</button>
-      <button type="submit" name="keyword" value="山">山</button>
-      <button type="submit" name="keyword" value="夜景">夜景</button>
-    </div>
-    その他<br>
-    <input type="text" name="others_key"><button type="submit">検索</button>
+    <h2>見たい景色，場所を選択，または入力してください</h2>
     <br>
-    <button type="submit" name="none">指定なし</button>
+    <div class="list">
+      <div class="select">
+        <button type="submit" name="keyword" value="桜" required><img src="https://photock.jp/photo/big_webp/photo0000-4234.webp" alt="桜の写真">桜</button>
+        <button type="submit" name="keyword" value="海"><img src="https://blog.acworks.co.jp/wp-content/uploads/2018/05/ea96f0e5234ec3d89642ac7607d451e3_m-790x480.jpg" alt="海の写真">海</button>
+        <button type="submit" name="keyword" value="川"><img src="https://as1.ftcdn.net/v2/jpg/05/83/81/46/1000_F_583814692_OpJDbVTs7GAgoqzBcQlC4P9Lsj9OgqTn.jpg" alt="川の写真">川</button>
+        <button type="submit" name="keyword" value="山"><img src="https://gahag.net/img/201509/21s/gahag-0006230561-1.jpg" alt="山の写真">山</button>
+        <button type="submit" name="keyword" value="夜景"><img src="https://travel.rakuten.co.jp/mytrip/sites/mytrip/files/migration_article_images/amazing/yakei-kansai-15abeno-harukas.jpg" alt="夜景の写真">夜景</button>
+      </div>
+      <div class="other">
+        <p>その他</p>
+        <div class="other_search">
+          <input type="text" name="others_key">
+          <button type="submit">検索</button>
+        </div>
+        <br>
+        <div class="NA">
+          <button type="submit" name="none">指定なし</button>
+        </div>
+      </div> 
+    </div>
   </form>
 </main>
 {% endblock %}

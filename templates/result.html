@@ -1,24 +1,42 @@
 {% extends "layout.html" %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="../static/css/result.css">
+{% endblock %}
+
 {% block content %}
 <main>
 
+<h2>検索結果</h2>
 {% if results %}
-  <h2>検索結果</h2>
-    <ul>
-      {% for place in results %}
-        <li>
-          <p>{{place.spot_name}}</p>
+  <ul>
+    {% for place in results %}
+      <li>
+        <p>{{place.spot_name}}</p>
 
-          {% if place.gallery_images %}
-            <img src="{{place.gallery_images[0]}}" alt="{{place.spot_name}}の写真" >
-          {% endif %}
+        {% if place.gallery_images %}
+          <img src="{{place.gallery_images}}" alt="{{place.spot_name}}の写真" >
+        {% endif %}
 
-          <p>{{place.introduction}}</p>
-          <p>({{place.dist}}km, {{place.address}})</p>
-        </li>
-      {% endfor %}
-    </ul>
+        <p>{{place.introduction}}</p>
+        <p>(目的地までの距離：{{place.dist}}km, 住所：{{place.address}})</p>
+        <iframe
+          width="600"
+          height="450"
+          style="border:0"
+          loading="lazy"
+          allowfullscreen
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBdw2tFIyC7DBe5MiU_yrb_Juz1HuZhop0&q={{place.lat}},{{place.lng}}">
+        </iframe>
+      </li>
+    {% endfor %}
+  </ul>
+
+{% else %}
+  <h2>条件に一致する場所が見つかりませんでした</h2>
 {% endif %}
+
+<a href="/">別の条件で検索する</a>
 
 </main>
 {% endblock %}

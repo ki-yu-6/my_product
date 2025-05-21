@@ -1,0 +1,82 @@
+main{
+  margin: 0;
+  padding: 0 0;
+  min-height: 100vh;
+  position: relative;
+  background-image: url("https://s3-ap-northeast-1.amazonaws.com/thegate/2021/04/09/16/33/07/drive_top.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.index{
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: space-around;
+}
+
+.top_title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: blue;
+}
+
+.top_title h1{
+  margin-bottom: 0;
+  font-size: 80px;
+}
+
+.top_title h3{
+  margin: 0;
+  font-size: 30px;
+}
+
+.button_wrapper{
+  margin-top: 100px;
+}
+
+button{
+  background-color: #009688;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover{
+  background-color: #00796b;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.index {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+}
+
+.top_title h1,
+.top_title h3 {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}

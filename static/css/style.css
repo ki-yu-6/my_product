@@ -1,0 +1,98 @@
+/* 全体の基本設定 */
+html{
+  height: 100%;
+  margin: 0;
+}
+
+body{
+  height: 100%; 
+  margin: 0;
+  font-family: sans-serif;
+  background-color: white;
+  color: #333;
+  line-height: 1.6;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  min-width: 100vh;
+}
+
+header{
+  background-color: #0066cc;
+  color: white;
+  padding: 15px 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .logo a{
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+header .logo a:hover{
+  box-shadow: 3px 3px 3px 3px black;
+  color: #afeeee;
+  border: none;
+  font-size: 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+main{
+  /* max-width: 900px; */
+  padding: 0;
+  flex: 1;
+}
+
+/* h1, h2, h3{
+  color: #004080;
+} */
+
+img{
+  width: 480px;
+  height: 270px;
+}
+
+/* button{
+  background-color: #009688;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+} */
+
+/* button:hover{
+  background-color: #00796b;
+} */
+
+footer{
+  text-align: center;
+  background-color: #eeeeee;
+  color: #555;
+  padding: 15px 0;
+  font-size: 14px;
+  width: 100%;
+  /* position: absolute;
+  bottom: 0; */
+}
+
+/* レスポンシブ対応 */
+@media(max-width: 768px){
+  img{
+    width: 320px;
+    height: 180px;
+  }
+
+  button{
+    width: 100%;
+    font-size: 18px;
+  }
+}

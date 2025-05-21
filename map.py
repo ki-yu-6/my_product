@@ -1,5 +1,6 @@
 import requests
 from math import radians, sin, cos, sqrt, asin
+import webbrowser
 
 API_KEY='AIzaSyBdw2tFIyC7DBe5MiU_yrb_Juz1HuZhop0'
 
@@ -28,3 +29,7 @@ def calc(user_lat, user_lng, min_dist, max_dist, df):
         lng=df.at[i, 'lng']
         df.at[i, 'dist']=haversine(user_lat, user_lng, lat, lng)
     return df[(min_dist<=df['dist'])&(df['dist']<=max_dist)].sort_values('dist')
+
+# def google_map(lat, lng, zoom=15):
+#     url=f"https://www.google.com/maps/@{lat},{lng},{zoom}z"
+#     webbrowser.open(url)

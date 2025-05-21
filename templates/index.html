@@ -1,13 +1,21 @@
 {% extends "layout.html" %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="../static/css/index.css">
+{% endblock %}
+
 {% block content %}
 <main>
-  <h1>ドライブスポット検索ツール</h1>
-  <p class="resize_image">
-    <img src="../static/images/top_image.jpg" alt="トップ画" class="top_image">
-  </p>
-
-  <form method="GET" action="{{ url_for('choice') }}">
-    <button type="submit">検索開始</button>
-  </form>
+  <div class="index">
+    <div class="top_title">
+      <h1>DORIVE</h1>
+      <h3>in 関西</h3>
+    </div>
+    <div class="button_wrapper">
+      <form method="GET" action="{{ url_for('choice') }}">
+        <button type="submit">START</button>
+      </form>
+    </div>
+  </div>
 </main>
 {% endblock %}
