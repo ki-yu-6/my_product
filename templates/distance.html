@@ -7,6 +7,9 @@
 {% block content %}
 <main>
   <form method="POST" action="{{ url_for('distance') }}">
+    <input type="hidden" name="label_filter" value="{{ label_filter }}">
+    <input type="hidden" name="key_filter" value="{{ key_filter }}">
+
     <div class="all">
       <h2>目的地の目安の距離を入力してください</h2>
 
