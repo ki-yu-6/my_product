@@ -13,10 +13,10 @@ body{
   line-height: 1.6;
 }
 
-.wrapper{
+.wrapper {
   display: flex;
   flex-direction: column;
-  min-width: 100vh;
+  min-height: 100vh;
 }
 
 header{
@@ -58,21 +58,6 @@ img{
   height: 270px;
 }
 
-/* button{
-  background-color: #009688;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-} */
-
-/* button:hover{
-  background-color: #00796b;
-} */
-
 footer{
   text-align: center;
   background-color: #eeeeee;
@@ -86,11 +71,11 @@ footer{
 
 /* レスポンシブ対応 */
 @media(max-width: 768px){
-  img{
-    width: 320px;
-    height: 180px;
-  }
-
+  img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
   button{
     width: 100%;
     font-size: 18px;
