@@ -28,25 +28,25 @@ def choice():
 
 @app.route('/key', methods=['GET', 'POST'])
 def keyword():
-  if request.method=='GET':
-    return render_template('keyword.html')
-  elif request.method=='POST':
-    others_key = request.form.get('others_key', '')
-    if "桜" in request.form:
-      session['key_filter']="桜"
-    elif "海" in request.form:
-      session['key_filter']="海"
-    elif "川" in request.form:
-      session['key_filter']="川"
-    elif "山" in request.form:
-      session['key_filter']="山"
-    elif "夜景" in request.form:
-      session['key_filter']="夜景"
-    elif others_key:
-      session['key_filter']=others_key
-    elif "none" in request.form:
-      session['key_filter']=None
-    return render_template('distance.html')
+    if request.method == 'GET':
+        return render_template('keyword.html')
+    elif request.method == 'POST':
+        keyword = request.form.get('keyword')
+        others_key = request.form.get('others_key', '')
+
+        print("受け取った keyword:", keyword)
+        print("others_key の値:", others_key)
+
+        if keyword in ["桜", "海", "川", "山", "夜景"]:
+            session['key_filter'] = keyword
+        elif keyword == "other" and others_key:
+            session['key_filter'] = others_key
+        elif keyword == "none":
+            session['key_filter'] = None
+
+        print("保存された key_filter:", session.get('key_filter'))
+
+        return render_template('distance.html')
 
 
 @app.route('/dist', methods=['GET', 'POST'])
@@ -74,7 +74,7 @@ def distance():
     if key_filter=="桜":
       fil_df=fil_df[fil_df["introduction"].str.contains("桜", na=False) & ~fil_df["introduction"].str.contains("若桜町|黄桜|滋賀県野洲市北桜|奈良県桜井市", na=False)]
     elif key_filter=="海":
-      fil_df=fil_df[fil_df["introduction"].str.contains("海", na=False) & ~fil_df["introduction"].str.contains("雲海|海津大崎|海の生き物|海洋博物館|海のない|南海電車|新長田駅を海側|海外|海南サクアス|海山|NIFREL|制海権|梅林|あわじ花さじき|塩津海道|ら～めん幕末 海南店|住吉大神|海の京都 宮津|玄武洞|ジャイアントパンダ|海鮮マーケット|水無瀬神宮|錦市場|ジオパーク浜坂の郷|花緑公園内|菩提寺|鶉野飛行場|黒壁スクエア|東寺|舟屋の里伊根|観心寺", na=False)]
+      fil_df=fil_df[fil_df["introduction"].str.contains("海", na=False) & ~fil_df["introduction"].str.contains("雲海|海津大崎|海の生き物|海洋博物館|海のない|南海電車|新長田駅を海側|海外|海南サクアス|海山|NIFREL|制海権|梅林|あわじ花さじき|塩津海道|ら～めん幕末 海南店|住吉大神|海の京都 宮津|玄武洞|ジャイアントパンダ|海鮮マーケット|水無瀬神宮|錦市場|ジオパーク浜坂の郷|花緑公園内|菩提寺|鶉野飛行場|黒壁スクエア|東寺|舟屋の里伊根|観心寺|高野山奥之院", na=False)]
     elif key_filter=="川":
       fil_df=fil_df[fil_df["introduction"].str.contains("川", na=False) & ~fil_df["introduction"].str.contains("徳川|カワサキワールド|大和川線|川崎重工|最初ヶ峰|古川鉄治郎|矢田川|生石高原|天の川|有田川町")]
     elif key_filter=="山":
