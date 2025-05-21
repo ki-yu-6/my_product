@@ -13,12 +13,23 @@ main {
 }
 
 .all {
-  background-color: rgba(0, 0, 0, 0.6); /* 黒の半透明背景で文字を読みやすく */
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 40px;
   border-radius: 16px;
   max-width: 600px;
   width: 90%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.error-message {
+  background-color: rgba(255, 0, 0, 0.8);
+  color: #fff;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
 h2 {

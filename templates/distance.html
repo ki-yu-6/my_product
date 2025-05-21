@@ -9,6 +9,13 @@
   <form method="POST" action="{{ url_for('distance') }}">
     <div class="all">
       <h2>目的地の目安の距離を入力してください</h2>
+
+      {% if error %}
+      <div class="error-message">
+        {{ error }}
+      </div>
+      {% endif %}
+
       <div class="items">
         <div class="input_address">
           <p>現在の住所</p>

@@ -58,7 +58,10 @@ def distance():
     address=request.form['address']
     min_dist=float(request.form['min_dist'])
     max_dist=float(request.form['max_dist'])
-    user_lat, user_lng=geocode(address)
+    try:
+        user_lat, user_lng = geocode(address)
+    except Exception as e:
+        return render_template('distance.html', error="住所が見つかりませんでした。もう一度入力してください。")
 
 
     fil_df=df.copy()
